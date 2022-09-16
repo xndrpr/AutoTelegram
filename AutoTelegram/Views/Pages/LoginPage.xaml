@@ -15,35 +15,15 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Width="200">
                 <TextBlock Foreground="White" Text="Api Id" />
-                <TextBox
-                    Background="#50535c"
-                    BorderThickness="0"
-                    Style="{DynamicResource TextBox}"
-                    Text="{Binding ApiId}" />
+                <TextBox Style="{DynamicResource TextBox}" Text="{Binding ApiId}" />
             </StackPanel>
             <StackPanel Width="200" Margin="0,10,0,0">
                 <TextBlock Foreground="White" Text="Api Hash" />
-                <TextBox
-                    Background="#50535c"
-                    BorderThickness="0"
-                    Style="{DynamicResource TextBox}"
-                    Text="{Binding ApiHash}" />
+                <TextBox Style="{DynamicResource TextBox}" Text="{Binding ApiHash}" />
             </StackPanel>
             <StackPanel Width="200" Margin="0,10,0,0">
                 <TextBlock Foreground="White" Text="Phone Number" />
-                <TextBox
-                    Background="#50535c"
-                    BorderThickness="0"
-                    Style="{DynamicResource TextBox}"
-                    Text="{Binding PhoneNumber}" />
-            </StackPanel>
-            <StackPanel Width="200" Margin="0,10,0,0">
-                <TextBlock Foreground="White" Text="Password" />
-                <TextBox
-                    Background="#50535c"
-                    BorderThickness="0"
-                    Style="{DynamicResource TextBox}"
-                    Text="{Binding Password}" />
+                <TextBox Style="{DynamicResource TextBox}" Text="{Binding PhoneNumber}" />
             </StackPanel>
             <Button
                 Height="25"

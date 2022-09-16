@@ -8,8 +8,55 @@
     Title="MainPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Background="#303030"
     DataContext="{Binding MainViewModel, Source={StaticResource ViewModelLocator}}"
     mc:Ignorable="d">
 
-    <Grid />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <DataGrid
+            AutoGenerateColumns="False"
+            BorderThickness="3"
+            ItemsSource="{Binding Messages}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="200"
+                    Binding="{Binding Text}"
+                    Header="Text" />
+                <DataGridTextColumn
+                    Width="175"
+                    Binding="{Binding Targets}"
+                    Header="Target" />
+                <DataGridTextColumn
+                    Width="175"
+                    Binding="{Binding Answer}"
+                    Header="Answer" />
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Username}"
+                    Header="Username" />
+                <DataGridTextColumn
+                    Width="150"
+                    Binding="{Binding SleepSeconds}"
+                    Header="Sleep (seconds)" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Width="150"
+                Height="30"
+                Background="#494949"
+                Command="{Binding StartCommand}"
+                Content="Запустить"
+                Style="{DynamicResource Button}" />
+        </StackPanel>
+    </Grid>
 </Page>
