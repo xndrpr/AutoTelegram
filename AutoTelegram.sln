@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTelegram", "AutoTelegram\AutoTelegram.csproj", "{68DB75CD-4136-4054-8683-6865EBD0B849}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoTelegram", "AutoTelegram\AutoTelegram.csproj", "{68DB75CD-4136-4054-8683-6865EBD0B849}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,7 @@
-﻿using AutoTelegram.Services;
+﻿using AutoTelegram.Models;
+using AutoTelegram.Services;
 using DevExpress.Mvvm;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AutoTelegram.ViewModels
@@ -22,14 +24,31 @@ namespace AutoTelegram.ViewModels
             {
                 return new DelegateCommand(() =>
                 {
-                    Properties.Settings.Default.ApiId = ApiId;
-                    Properties.Settings.Default.ApiHash = ApiHash;
-                    Properties.Settings.Default.PhoneNumber = PhoneNumber;
-                    Properties.Settings.Default.IsAuthorized = true;
+                    AuthDto auth = new AuthDto(ApiId, ApiHash, PhoneNumber);
 
-                    Properties.Settings.Default.Save();
+                    if (auth.IsCorrect())
+                    {
+                        Properties.Settings.Default.ApiId = ApiId;
+                        Properties.Settings.Default.ApiHash = ApiHash;
+                        Properties.Settings.Default.PhoneNumber = PhoneNumber;
+                        Properties.Settings.Default.IsAuthorized = true;
 
-                    _pageService.Navigate(MainViewModel.mainPage);
+                        Properties.Settings.Default.Save();
+
+                        _pageService.Navigate(MainViewModel.mainPage);
+                    }
+                        
+                    else
+                    {
+                        Properties.Settings.Default.ApiId = null;
+                        Properties.Settings.Default.ApiHash = null;
+                        Properties.Settings.Default.PhoneNumber = null;
+                        Properties.Settings.Default.IsAuthorized = false;
+
+                        Properties.Settings.Default.Save();
+
+                        MessageBox.Show("Не корректные данные или нет подключения к интернету.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 });
             }
         }
