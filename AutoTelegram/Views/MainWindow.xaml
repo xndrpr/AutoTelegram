@@ -45,7 +45,7 @@
                 FontSize="10"
                 FontWeight="SemiBold"
                 Foreground="#fff"
-                Text="Auto Telegram" />
+                Text="Auto Telegram v0.0.3" />
         </StackPanel>
 
         <StackPanel
